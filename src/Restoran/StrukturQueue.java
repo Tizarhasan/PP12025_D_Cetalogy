@@ -65,4 +65,24 @@ public class StrukturQueue {
             System.out.println("Total antrian: " + size());
         }
     }
+
+    public void cariTransaksi(String namaDicari) {
+    Node current = FRONT;
+    boolean ditemukan = false;
+
+    while (current != null) {
+        Transaksi data = current.getData();
+        if (data.getNamaPelanggan().equalsIgnoreCase(namaDicari)) {
+            System.out.println("Transaksi ditemukan:");
+            data.tampilkanInfo();
+            ditemukan = true;
+            break; // berhenti setelah ditemukan
+        }
+        current = current.getNext();
+    }
+
+    if (!ditemukan) {
+        System.out.println("Transaksi atas nama \"" + namaDicari + "\" tidak ditemukan dalam antrian.");
+    }
+}
 }
