@@ -18,7 +18,8 @@ public class MainApp {
             System.out.println("2. Lihat Antrian Transaksi");
             System.out.println("3. Proses Transaksi (Dequeue)");
             System.out.println("4. Lihat Total Pendapatan");
-            System.out.println("5. Keluar");
+            System.out.println("5. Cari Transaksi Berdasarkan Nama Pelanggan");
+            System.out.println("6. Keluar");
             System.out.print("Pilih menu: ");
             int pilihan = scanner.nextInt();
             scanner.nextLine(); // Buang newline
@@ -61,6 +62,12 @@ public class MainApp {
                     break;
 
                 case 5:
+                    System.out.print("Masukkan nama pelanggan yang ingin dicari: ");
+                    String namaCari = scanner.nextLine();
+                    queue.cariTransaksi(namaCari);
+                    break;
+
+                case 6:
                     System.out.println("Program selesai. Terima kasih!");
                     running = false;
                     break;
