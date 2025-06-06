@@ -16,7 +16,7 @@ public class MainApp {
             System.out.println("\n=== APLIKASI PENCATATAN TRANSAKSI RESTORAN ===");
             System.out.println("1. Tambah Transaksi");
             System.out.println("2. Lihat Antrian Transaksi");
-            System.out.println("3. Proses Transaksi (Dequeue)");
+            System.out.println("3. Proses Transaksi");
             System.out.println("4. Lihat Total Pendapatan");
             System.out.println("5. Cari Transaksi Berdasarkan Nama Pelanggan");
             System.out.println("6. Keluar");
