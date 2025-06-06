@@ -39,4 +39,30 @@ public class StrukturQueue {
     public boolean isEmpty() {
         return FRONT == null;
     }
+
+    public int size() {
+        int count = 0;
+        Node current = FRONT;
+        while (current != null) {
+            count++;
+            current = current.getNext();
+        }
+        return count;
+    }
+
+    public void displayQueue() {
+        if (isEmpty()) {
+            System.out.println("Queue kosong.");
+        } else {
+            Node current = FRONT;
+            int nomor = 1;
+            while (current != null) {
+                System.out.println("Transaksi #" + nomor++);
+                current.getData().tampilkanInfo();
+                System.out.println("------------------------");
+                current = current.getNext();
+            }
+            System.out.println("Total antrian: " + size());
+        }
+    }
 }
