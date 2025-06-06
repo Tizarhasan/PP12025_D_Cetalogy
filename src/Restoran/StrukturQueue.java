@@ -1,4 +1,4 @@
-package TugasBesar;
+package Restoran;
 
 public class StrukturQueue {
     private Node FRONT, REAR;

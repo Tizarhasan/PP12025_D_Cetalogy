@@ -1,4 +1,4 @@
-package TugasBesar;
+package Restoran;
 
 public class Transaksi {
     private String namaPelanggan;
