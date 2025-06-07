@@ -20,9 +20,17 @@ public class MainApp {
             System.out.println("4. Lihat Total Pendapatan");
             System.out.println("5. Cari Transaksi Berdasarkan Nama Pelanggan");
             System.out.println("6. Keluar");
-            System.out.print("Pilih menu: ");
-            int pilihan = scanner.nextInt();
-            scanner.nextLine(); // Buang newline
+
+            int pilihan = 0;
+            while (true) {
+                System.out.print("Pilih menu: ");
+                try {
+                    pilihan = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("Input tidak valid. Harap masukkan angka.");
+                }
+            }
 
             switch (pilihan) {
                 case 1:
@@ -34,11 +42,30 @@ public class MainApp {
                     while (tambahMenu) {
                         System.out.print("Nama menu: ");
                         String menu = scanner.nextLine();
-                        System.out.print("Jumlah pesanan: ");
-                        int jumlah = scanner.nextInt();
-                        System.out.print("Harga satuan: ");
-                        int harga = scanner.nextInt();
-                        scanner.nextLine(); // Buang newline
+
+                        int jumlah = 0;
+                        while (true) {
+                            System.out.print("Jumlah pesanan: ");
+                            try {
+                                jumlah = Integer.parseInt(scanner.nextLine());
+                                if (jumlah > 0) break;
+                                else System.out.println("Jumlah harus lebih dari 0.");
+                            } catch (NumberFormatException e) {
+                                System.out.println("Input tidak valid. Masukkan angka yang benar.");
+                            }
+                        }
+
+                        int harga = 0;
+                        while (true) {
+                            System.out.print("Harga satuan: ");
+                            try {
+                                harga = Integer.parseInt(scanner.nextLine());
+                                if (harga >= 0) break;
+                                else System.out.println("Harga tidak boleh negatif.");
+                            } catch (NumberFormatException e) {
+                                System.out.println("Input tidak valid. Masukkan angka yang benar.");
+                            }
+                        }
 
                         transaksi.tambahMenu(menu, jumlah, harga);
 
