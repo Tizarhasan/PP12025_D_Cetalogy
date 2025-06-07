@@ -28,16 +28,28 @@ public class MainApp {
                 case 1:
                     System.out.print("Nama pelanggan: ");
                     String nama = scanner.nextLine();
-                    System.out.print("Nama menu: ");
-                    String menu = scanner.nextLine();
-                    System.out.print("Jumlah pesanan: ");
-                    int jumlah = scanner.nextInt();
-                    System.out.print("Harga satuan: ");
-                    int harga = scanner.nextInt();
-                    scanner.nextLine(); // Buang newline
+                    Transaksi transaksi = new Transaksi(nama);
 
-                    Transaksi t = new Transaksi(nama, menu, jumlah, harga);
-                    queue.enqueue(t);
+                    boolean tambahMenu = true;
+                    while (tambahMenu) {
+                        System.out.print("Nama menu: ");
+                        String menu = scanner.nextLine();
+                        System.out.print("Jumlah pesanan: ");
+                        int jumlah = scanner.nextInt();
+                        System.out.print("Harga satuan: ");
+                        int harga = scanner.nextInt();
+                        scanner.nextLine(); // Buang newline
+
+                        transaksi.tambahMenu(menu, jumlah, harga);
+
+                        System.out.print("Tambah menu lagi? (y/n): ");
+                        String lagi = scanner.nextLine();
+                        if (!lagi.equalsIgnoreCase("y")) {
+                            tambahMenu = false;
+                        }
+                    }
+
+                    queue.enqueue(transaksi);
                     System.out.println("Transaksi berhasil ditambahkan.");
                     break;
 

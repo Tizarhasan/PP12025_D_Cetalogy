@@ -1,34 +1,31 @@
 package Restoran;
 
+import java.util.ArrayList;
+
 public class Transaksi {
     private String namaPelanggan;
-    private String namaMenu;
-    private int jumlah;
-    private int hargaSatuan;
+    private ArrayList<String> daftarMenu;
+    private ArrayList<Integer> jumlah;
+    private ArrayList<Integer> hargaSatuan;
     private int totalHarga;
 
-    public Transaksi(String namaPelanggan, String namaMenu, int jumlah, int hargaSatuan) {
+    public Transaksi(String namaPelanggan) {
         this.namaPelanggan = namaPelanggan;
-        this.namaMenu = namaMenu;
-        this.jumlah = jumlah;
-        this.hargaSatuan = hargaSatuan;
-        this.totalHarga = jumlah * hargaSatuan;
+        this.daftarMenu = new ArrayList<>();
+        this.jumlah = new ArrayList<>();
+        this.hargaSatuan = new ArrayList<>();
+        this.totalHarga = 0;
+    }
+
+    public void tambahMenu(String menu, int jumlahPesanan, int harga) {
+        daftarMenu.add(menu);
+        jumlah.add(jumlahPesanan);
+        hargaSatuan.add(harga);
+        totalHarga += jumlahPesanan * harga;
     }
 
     public String getNamaPelanggan() {
         return namaPelanggan;
-    }
-
-    public String getNamaMenu() {
-        return namaMenu;
-    }
-
-    public int getJumlah() {
-        return jumlah;
-    }
-
-    public int getHargaSatuan() {
-        return hargaSatuan;
     }
 
     public int getTotalHarga() {
@@ -37,9 +34,9 @@ public class Transaksi {
 
     public void tampilkanInfo() {
         System.out.println("Nama Pelanggan: " + namaPelanggan);
-        System.out.println("Menu: " + namaMenu);
-        System.out.println("Jumlah: " + jumlah);
-        System.out.println("Harga Satuan: " + hargaSatuan);
+        for (int i = 0; i < daftarMenu.size(); i++) {
+            System.out.println("- " + daftarMenu.get(i) + " | Jumlah: " + jumlah.get(i) + " | Harga Satuan: " + hargaSatuan.get(i));
+        }
         System.out.println("Total Harga: " + totalHarga);
     }
 }
