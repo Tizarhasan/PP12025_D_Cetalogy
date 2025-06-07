@@ -52,7 +52,7 @@ public class StrukturQueue {
 
     public void displayQueue() {
         if (isEmpty()) {
-            System.out.println("Queue kosong.");
+            System.out.println("Antrian kosong.");
         } else {
             Node current = FRONT;
             int nomor = 1;
