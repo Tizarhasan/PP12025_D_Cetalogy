@@ -1,4 +1,4 @@
-package Restoran;
+package entity;
 
 import java.util.ArrayList;
 

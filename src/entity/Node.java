@@ -1,4 +1,4 @@
-package Restoran;
+package entity;
 
 public class Node {
     private Transaksi data;

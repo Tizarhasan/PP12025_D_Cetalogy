@@ -1,4 +1,8 @@
-package Restoran;
+package services;
+
+
+import entity.Node;
+import entity.Transaksi;
 
 public class StrukturQueue {
     private Node FRONT, REAR;

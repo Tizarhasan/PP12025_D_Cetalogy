@@ -1,7 +1,8 @@
-package App;
 
-import Restoran.StrukturQueue;
-import Restoran.Transaksi;
+
+import entity.Transaksi;
+import services.StrukturQueue;
+
 import java.util.Scanner;
 
 public class MainApp {
