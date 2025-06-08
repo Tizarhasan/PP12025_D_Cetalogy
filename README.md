@@ -1,18 +1,51 @@
-## Getting Started
+# Pencatatan Transaksi Harian - Cetalogy
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Deskripsi Proyek
+Proyek ini merupakan aplikasi **console-based** berbasis bahasa pemrograman Java yang dikembangkan sebagai bagian dari Tugas Besar Praktikum Pemrograman 1. Aplikasi ini dirancang untuk membantu pencatatan transaksi harian pada sebuah restoran atau warung makan sederhana.
 
-## Folder Structure
+Struktur data utama yang digunakan adalah **Queue berbasis Node**, dengan prinsip **FIFO (First In First Out)**.
 
-The workspace contains two folders by default, where:
+----------
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Fitur Aplikasi
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- **Tambah Transaksi (Enqueue)**  
+  Menambahkan transaksi baru ke antrian.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- **Lihat Antrian Transaksi**  
+  Menampilkan semua transaksi yang sedang mengantri.
 
-## Dependency Management
+- **Proses Transaksi (Dequeue)**  
+  Memproses transaksi paling awal (menghapus dari antrian).
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- **Lihat Total Pendapatan**  
+  Menghitung total pendapatan dari semua transaksi yang telah diproses.
+
+- **Cari Transaksi Berdasarkan Nama**  
+  Mencari transaksi berdasarkan nama pelanggan.
+
+----------
+
+## Struktur Proyek
+PP12025_D_Cetalogy/
+├── src/
+│   ├── entity/                               # Berisi kelas-kelas model data transaksi dan node queue
+│   │   ├── Node.java
+│   │   └── Transaksi.java
+│   ├── services/                             # Berisi kelas yang mengelola logika struktur data Queue
+│   │   └── StrukturQueue.java
+│   └── MainApp.java                          # Kelas utama tempat program dijalankan dan antarmuka konsol dikelola
+├── docs/                                     # Berisi dokumentasi proyek, laporan, dan diagram
+│   └── laporan_tugas_besar.pdf
+├── README.md                                 # Panduan umum mengenai proyek dan cara menjalankannya
+
+----------
+
+## Kontributor
+- **Ketua**  
+  Tyezar Hasan Khusaeni (233040029)
+
+- **Anggota**  
+  Kresna Satria Dewantoro (233040001)
+  Aqillah Lean Andera (233040017)
+  Moch Sachrul Akbar R (233040036)
