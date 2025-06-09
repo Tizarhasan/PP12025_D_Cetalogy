@@ -1,9 +1,8 @@
 
 
 import entity.Transaksi;
-import services.StrukturQueue;
-
 import java.util.Scanner;
+import services.StrukturQueue;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -62,7 +61,7 @@ public class MainApp {
                             try {
                                 harga = Integer.parseInt(scanner.nextLine());
                                 if (harga >= 0) break;
-                                else System.out.println("Harga tidak boleh negatif.");
+                                else System.out.println("Harga tidak boleh kurang dari 0.");
                             } catch (NumberFormatException e) {
                                 System.out.println("Input tidak valid. Masukkan angka yang benar.");
                             }
